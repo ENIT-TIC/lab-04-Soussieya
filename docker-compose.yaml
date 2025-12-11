@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - sqlite_data:/app/data   # Persiste la DB SQLite
+    environment:
+      - DB_PATH=/app/data/books.db
+
+volumes:
+  sqlite_data:
